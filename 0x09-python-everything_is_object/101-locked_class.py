@@ -6,8 +6,11 @@ dynmaically created attributes
 
 
 class LockedClass:
-    __slots__ = ['first_name']
-
     def __init__(self):
-        """ Init method """
-        pass
+        self.__dict__['first_name'] = None
+
+    def __setattr__(self, name, value):
+        if name == 'first_name':
+            self.__dict__[name] = value
+        else:
+            raise AttributeError("'LockedClass' object has no attribute '{}'".format(name))
