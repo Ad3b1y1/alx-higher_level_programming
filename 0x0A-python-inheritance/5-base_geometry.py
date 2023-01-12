@@ -1,4 +1,4 @@
-[1;5B#!/usr/bin/python3
+#!/usr/bin/python3
 class BaseGeometry:
     """ Empty class """
     pass
